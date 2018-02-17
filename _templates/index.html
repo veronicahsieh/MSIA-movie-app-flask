@@ -1,9 +1,15 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+<div class="jumbotron">
+  <h1>Box Office Predictions</h1>
 
-<html>
-<body>
 
-#homepage title
+  <p class="lead">And I'm glad to be learning so much about it!</p>
+</div>
+
+{% endblock %}
+
 <h1> Box Office Predictor </h1>
 
 #genre selection
@@ -11,7 +17,7 @@
 <br>
 
 #release year
-<h3> Movie release year: </h3>
+<h3> Please enter the movie release year </h3>
 
 <input type = "text" name = "release_year", value = "year">
 <br>
@@ -31,7 +37,3 @@ function changeName() {
 <button type = "button"
 onclick = "changeName()">
 Click to see the predicted revenue </button>
-
-</body>
-
-</html>
