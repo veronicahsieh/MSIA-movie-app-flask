@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block body %}
+{% load wtforms %}
+
 <div class="jumbotron">
   <h1>Box Office Predictions</h1>
   <p class="lead">Enter information about a movie and see how much it'll make in theaters!</p>
@@ -8,17 +10,32 @@
 
 </div>
 
-<h3> Select a genre </h3>
+<!-- <form method = "POST" action = "http://127.0.0.1:5000/">
+  {{ form.csrf_token }}
+  {{form.release_year.label}}
+  {{form.release_year}}
+  {{form.rating.label}}
+  {{form.rating}}
+  {{form.popularity.label}}
+  {{form.popularity}}
+  {{form.runtime.label}}
+  {{form.runtime}}
+  {{form.budget.label}}
+  {{form.budget}}
+  <input type = "submit" value = "Submit"> -->
 
-<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Movie Genres
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Comedy</a></li>
-    <li><a href="#">Horror</a></li>
-  </ul>
-</div>
+  <fieldset>
+    <h3> Select a genre </h3>
+    <select name = "genre">
+      <option value = "Action"> Action </option>
+      <option value = "Comedy"> Comedy </option>
+      <option value = "Horror"> Horror </option>
+    </select>
+    <br>
+    <br>
+    <input type = "submit"> -->
+</form>
+
 </div>
 <br>
 <h3> Movie release year: </h3>
