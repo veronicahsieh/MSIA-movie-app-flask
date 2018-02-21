@@ -19,7 +19,6 @@ def inputdata():
         popularity = request.form['popularity']
         rating = request.form['rating']
         budget = request.form['budget']
-        display = 'Genre selected is: ' + genre
         return display
 
 if __name__ == "__main__": #quick check that only run app whenever this app is called directly
