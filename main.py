@@ -36,7 +36,9 @@ def inputdata():
         sample_frame = build_pred_frame(genres_code,year,runtime,popularity,rating,budget)
         revenue = movie_pred(sample_frame)
 
-        return render_template("results.html",result = revenue)
+        return revenue
+
+        #return render_template("results.html",result = revenue)
 
 if __name__ == "__main__": #quick check that only run app whenever this app is called directly
     app.run(debug=True) #start this app

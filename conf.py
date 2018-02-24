@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# book_webapp documentation build configuration file, created by
-# sphinx-quickstart on Wed Jan 31 14:07:52 2018.
+# movie revenue prediction app documentation build configuration file, created by
+# sphinx-quickstart on Fri Feb 23 09:23:40 2018.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -46,7 +46,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'book_webapp'
+project = 'movie revenue prediction app'
 copyright = '2018, Veronica Hsieh'
 author = 'Veronica Hsieh'
 
@@ -112,7 +112,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'book_webappdoc'
+htmlhelp_basename = 'movierevenuepredictionappdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -139,7 +139,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'book_webapp.tex', 'book\\_webapp Documentation',
+    (master_doc, 'movierevenuepredictionapp.tex', 'movie revenue prediction app Documentation',
      'Veronica Hsieh', 'manual'),
 ]
 
@@ -149,7 +149,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'book_webapp', 'book_webapp Documentation',
+    (master_doc, 'movierevenuepredictionapp', 'movie revenue prediction app Documentation',
      [author], 1)
 ]
 
@@ -160,8 +160,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'book_webapp', 'book_webapp Documentation',
-     author, 'book_webapp', 'One line description of project.',
+    (master_doc, 'movierevenuepredictionapp', 'movie revenue prediction app Documentation',
+     author, 'movierevenuepredictionapp', 'One line description of project.',
      'Miscellaneous'),
 ]
 
