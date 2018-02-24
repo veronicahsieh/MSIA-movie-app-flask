@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+{% block body %}
+
+<div class="jumbotron">
+  <h1>Box Office Predictions</h1>
+  <p class="lead">Enter information about a movie and see how much it'll make in theaters!</p>
+<br>
+</div>
+
+<form action = "{{ url_for('inputdata') }}" method = "POST">
+  Select a genre
+  <select name = 'genre' value = "">
+    <option value = "Action"> Action </option>
+    <option value = "Comedy"> Comedy </option>
+    <option value = "Horror"> Horror </option>
+  </select>
+
+  <br>
+  <br>
+
+  Release Year
+  <input type = "number" name = "release_year" value = "Release Year" min = "1900" max = "2018" maxlength = "4">
+  <br>
+  <br>
+
+  Runtime
+  <input type = "number" name = "runtime" value = "Runtime" min = "1">
+  <br>
+  <br>
+
+  Popularity (scale from 1-10)
+  <input type = "number" name = "popularity" value = "Popularity (scale of 1-10)" min = "1" max = "10">
+  <br>
+  <br>
+
+  Rating (1-5)
+  <input type = "number" name = "rating" value = "Rating (scale of 1-5)" min = "1" max = "5">
+  <br>
+  <br>
+
+  Budget
+  <input type = "number" name = "budget" value = "Estimated Budget" min = "1">
+  <br>
+  <br>
+
+  <input type = "submit" value = "Submit">
+
+</form>
+<br>
+
+{% endblock %}
