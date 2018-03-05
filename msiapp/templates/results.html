@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+{% block body %}
+<div class="jumbotron">
+  <p class="lead">Predicted revenue for your movie is: {{ revenue }} </p>
+
+  <table cellspacing = "5">
+    <thead>
+      <tr>
+        <th>Genre</th>
+        <th>Popularity</th>
+        <th>Runtime</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for movie in movies %}
+        <tr>
+          <td>{{ movie.genre }}</td>
+          <td>{{ movie.popularity }}</td>
+          <td>{{ movie.runtime }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+
+{% endblock %}
