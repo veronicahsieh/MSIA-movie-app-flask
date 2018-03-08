@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 
-from msiapp import app, db
+from msiapp import application, db
 from msiapp.models import Movie
 
 from develop.genres_map import make_genres_map
@@ -15,15 +15,15 @@ from sklearn.externals import joblib
 
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
 
-@app.route('/') #root directory, homepage of the website
+@application.route('/') #root directory, homepage of the website
 def index():
     return render_template('index.html')
 
-@app.route('/about')
+@application.route('/about')
 def about():
     return render_template('about.html')
 
-@app.route('/results', methods = ['POST'])
+@application.route('/results', methods = ['POST'])
 def inputdata():
     if request.method == 'POST':
         genre = request.form['genre']
@@ -48,4 +48,4 @@ def inputdata():
         return render_template("results.html", revenue = revenue, movies = Movie.query.all())
 
 if __name__ == "__main__": #quick check that only run app whenever this app is called directly
-    app.run(debug=True) #start this app
+    application.run(debug=True) #start this app
