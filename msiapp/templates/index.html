@@ -30,10 +30,10 @@ body, html {
 <div class="w3-top">
   <div class="w3-row w3-padding w3-black">
     <div class="w3-col s3">
-      <a href="../templates/index.html" class="w3-button w3-block w3-black">HOME</a>
+      <a href="{{ url_for('index') }}" class="w3-button w3-block w3-black">HOME</a>
     </div>
     <div class="w3-col s3">
-      <a href="../templates/about.html" class="w3-button w3-block w3-black">ABOUT</a>
+      <a href="{{ url_for('about') }}" class="w3-button w3-block w3-black">ABOUT</a>
     </div>
   </div>
 </div>
@@ -80,27 +80,27 @@ body, html {
   <br>
   <br>
 
-  Release Year
+  Release Year:
   <input type = "number" name = "release_year" value = "Release Year" min = "1900" max = "2018" maxlength = "4">
   <br>
   <br>
 
-  Runtime
+  Runtime (weeks):
   <input type = "number" name = "runtime" value = "Runtime" min = "1">
   <br>
   <br>
 
-  Popularity (scale from 1-10)
+  Popularity (scale from 1-10):
   <input type = "number" name = "popularity" value = "Popularity (scale of 1-10)" min = "1" max = "10">
   <br>
   <br>
 
-  Rating (1-5)
+  Rating (1-5):
   <input type = "number" name = "rating" value = "Rating (scale of 1-5)" min = "1" max = "5">
   <br>
   <br>
 
-  Budget
+  Budget ($):
   <input type = "number" name = "budget" value = "Estimated Budget" min = "1">
   <br>
   <br>

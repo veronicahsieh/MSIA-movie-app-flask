@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">t
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
 <style>
 body, html {
     height: 100%;
@@ -29,10 +29,10 @@ body, html {
 <div class="w3-top">
   <div class="w3-row w3-padding w3-black">
     <div class="w3-col s3">
-      <a href="../templates/index.html" class="w3-button w3-block w3-black">HOME</a>
+      <a href="{{ url_for('index') }}" class="w3-button w3-block w3-black">HOME</a>
     </div>
     <div class="w3-col s3">
-      <a href="../templates/about.html" class="w3-button w3-block w3-black">ABOUT</a>
+      <a href="{{ url_for('about') }}" class="w3-button w3-block w3-black">ABOUT</a>
     </div>
   </div>
 </div>
@@ -54,25 +54,6 @@ body, html {
     <p><i>"Film as dream, film as music. No art passes our conscience in the way film does, and goes directly to our feelings, deep down into the dark rooms of our souls.”</i></p>
     <p>― Ingmar Bergman</p>
   </div>
-  <table cellspacing = "5">
-    <thead>
-      <tr>
-        <th>Genre</th>
-        <th>Popularity</th>
-        <th>Runtime</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      {% for movie in movies %}
-        <tr>
-          <td>{{ movie.genre }}</td>
-          <td>{{ movie.popularity }}</td>
-          <td>{{ movie.runtime }}</td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
 
 </body>
 </html>
