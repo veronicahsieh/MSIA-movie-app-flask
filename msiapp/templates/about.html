@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+
+{% block title %}About{% endblock %}
+{% block body %}
+
+<style>
+body {
+  height: 100%;
+  font-family: "Avenir Light", sans-serif;
+  background-position: center;
+  background-image: url("/Users/veronicahsieh/Documents/GitHub/MSIA-webapp/popcorn_unsplash.jpg");
+  min-height: 75%;
+}
+
+.jumbotron {
+  margin-bottom: 0px;
+  height: 350px;
+  background-image: url("static/popcorn_unsplash.jpg");
+  min-height: 75%;
+}
+</style>
+
+<div class="jumbotron">
+  <h1> About </h1>
+
+  <p class="lead">You can learn more about my project <a href="https://github.com/vhsieh920/MSIA_movie_webapp">here</a>.</p>
+
+</div>
+{% endblock %}

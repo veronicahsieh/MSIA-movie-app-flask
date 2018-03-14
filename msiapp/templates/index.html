@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+body, html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+    margin: 0px;
+    padding: 8px;
+}
+.bgimg {
+    background-position: center;
+    background-size: cover;
+    background-image: url("../static/movie_reel.jpg");
+    min-height: 75%;
+}
+.menu {
+    display: none;
+}
+.lead {
+  font-size: 24px;
+}
+</style>
+
+<body>
+
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="#" onclick="window.location.reload(true);" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="https://github.com/vhsieh920" class="w3-button w3-block w3-black">ABOUT</a>
+    </div>
+  </div>
+</div>
+
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    <span class="w3-tag">Class project by Veronica Hsieh</span>
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white" style="font-size:90px">Box Office<br>Revenue</span>
+  </div>
+  <div class="w3-display-bottomright w3-center w3-padding-large">
+    <span class="w3-text-white">contact: veronica.hsieh@gmail.com</span>
+  </div>
+</header>
+
+  <p class="lead">Enter information about a movie and see how much it'll make in theaters!</p>
+
+<form action = "{{ url_for('inputdata') }}" method = "POST">
+  Select a genre
+  <select name = 'genre' value = "">
+    <option value = "Music"> Action </option>
+    <option value = "Romance"> Comedy </option>
+    <option value = "Family"> Family </option>
+    <option value = "War"> War </option>
+    <option value = "Foreign"> Foreign </option>
+    <option value = "TV Movie"> TV Movie </option>
+    <option value = "Adventure"> Adventure </option>
+    <option value = "Fantasy"> Fantasy </option>
+    <option value = "Animation"> Animation </option>
+    <option value = "Drama"> Drama </option>
+    <option value = "Horror"> Horror </option>
+    <option value = "Action"> Action </option>
+    <option value = "Comedy"> Comedy </option>
+    <option value = "History"> History </option>
+    <option value = "Western"> Western </option>
+    <option value = "Thriller"> Thriller </option>
+    <option value = "Crime"> Crime </option>
+    <option value = "Science Fiction"> Science Fiction </option>
+    <option value = "Mystery"> Mystery </option>
+    <option value = "Documentary"> Documentary </option>
+  </select>
+
+  <br>
+  <br>
+
+  Release Year
+  <input type = "number" name = "release_year" value = "Release Year" min = "1900" max = "2018" maxlength = "4">
+  <br>
+  <br>
+
+  Runtime
+  <input type = "number" name = "runtime" value = "Runtime" min = "1">
+  <br>
+  <br>
+
+  Popularity (scale from 1-10)
+  <input type = "number" name = "popularity" value = "Popularity (scale of 1-10)" min = "1" max = "10">
+  <br>
+  <br>
+
+  Rating (1-5)
+  <input type = "number" name = "rating" value = "Rating (scale of 1-5)" min = "1" max = "5">
+  <br>
+  <br>
+
+  Budget
+  <input type = "number" name = "budget" value = "Estimated Budget" min = "1">
+  <br>
+  <br>
+
+  <input type = "submit" value = "Submit">
+</form>
+<br>
+
+</body>
+</html>
