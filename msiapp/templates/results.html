@@ -1,7 +1,54 @@
-{% extends "base.html" %}
-{% block title %}About{% endblock %}
-{% block body %}
-<div class="jumbotron">
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">t
+<style>
+body, html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+    margin: 0px;
+    padding: 8px;
+}
+.bgimg {
+    background-position: center;
+    background-size: cover;
+    background-image: url("../static/popcorn.jpg");
+    min-height: 75%;
+}
+.menu {
+    display: none;
+}
+.lead{
+  font-size: 24px
+}
+</style>
+<body>
+
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="../templates/index.html" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="https://github.com/vhsieh920" class="w3-button w3-block w3-black">ABOUT</a>
+    </div>
+  </div>
+</div>
+
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    <span class="w3-tag">Class project by Veronica Hsieh</span>
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white" style="font-size:90px">Results</span>
+  </div>
+  <div class="w3-display-bottomright w3-center w3-padding-large">
+    <span class="w3-text-white">contact: veronica.hsieh@gmail.com</span>
+  </div>
+</header>
+
   <p class="lead">Predicted revenue for your movie is: {{ revenue }} </p>
 
   <table cellspacing = "5">
@@ -24,7 +71,5 @@
     </tbody>
   </table>
 
-</div>
-
-
-{% endblock %}
+</body>
+</html>
