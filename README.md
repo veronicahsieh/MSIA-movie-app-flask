@@ -11,7 +11,7 @@ The goal of this project is to build a movie prediction model that enable users 
 
 ### Directory Structure
 
-├── _README.md --
+├── _README.md <br />
 ├── _develop                        # Folder with all the necessary files for data cleaning & model creation
 |   └── genres_map.py
 |   └── movies_data_cleaning.py     
@@ -72,7 +72,7 @@ $ python application.py
 ```
 ### Unit Tests & Logging
 * Unit tests checked that the output the data cleaning functions and user-entered data from the HTML form returned the proper output - all unit tests can be found in ```test.py```
-* Logging was performed - examples can be in found in the ```application.log``` file
+* Logging was performed at the application level - see example ```application.log``` 
 
 ### Project Management
 Development of this project was tracked in Pivotal Tracker. Link to this specific project can be found 
