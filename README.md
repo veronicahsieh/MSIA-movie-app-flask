@@ -11,6 +11,7 @@ The goal of this project is to build a movie prediction model that enable users 
 
 ### Directory Structure
 
+```
 ├── _README.md <br />
 ├── _develop                        # Folder with all the necessary files for data cleaning & model creation <br />
 |   └── genres_map.py <br />
@@ -35,6 +36,7 @@ The goal of this project is to build a movie prediction model that enable users 
 ├── _config.py                      # Configuration for AWS and RDS instance <br />
 ├── movieapp_presentation.pdf       # Final presentation for demo of web app <br />
 └── application.log                 # Logging from application.py <br />
+```
 
 ### Steps to Launch App
 To get the app running locally:
