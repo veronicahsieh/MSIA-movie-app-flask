@@ -38,7 +38,6 @@ $ pip install -r requirements.txt
 $ cd develop
 $ python movies_data_cleaning.py
 $ python make_model.py
-
 ```
 4. Run application
 
@@ -46,11 +45,10 @@ $ python make_model.py
 $ cd ..
 $ python create_db.py (one-time setup only)
 $ python application.py
-
 ```
 ### Unit Tests & Logging
 * Unit tests checked that the output the data cleaning functions and user-entered data from the HTML form returned the proper output - all unit tests can be found in test.py
 * Logging was performed - examples can be in found in the "application.log" file
 
 ### Project Management
-Development of this project was tracked in Pivotal Tracker. Link to this specific project can be found (https://www.pivotaltracker.com/n/projects/2143653 "here").
+Development of this project was tracked in Pivotal Tracker. Link to this specific project can be found [here] (https://www.pivotaltracker.com/n/projects/2143653).
