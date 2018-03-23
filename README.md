@@ -74,7 +74,7 @@ $ python make_model.py clean_movies.csv
 
 4. Run application. **Note:** ```create_db.py``` is a one-time setup only
 
-* 4a. Setup the configuration file. Uncomment one of the lines in the ```config.py``` depending on whether a local database or RDS instance is being used. If RDS, update ```[name_of_RDS_endpoint]``` to the name of your specific RDS instance.
+* 4a. Setup the configuration file. Uncomment one of the lines in the ```config.py``` file depending on whether a local database or RDS instance is being used. If RDS, update ```[name_of_RDS_endpoint]``` to the name of your specific RDS instance.
 
 ```
 # Local database
