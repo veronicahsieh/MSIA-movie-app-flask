@@ -7,11 +7,11 @@ The goal of this project is to build a movie prediction model that enable users 
 
 ### Package Requirements
 
-* Refer to requirements.txt
+* Refer to ```requirements.txt```
 
 ### Directory Structure
 
-├── _README.md
+├── _README.md --
 ├── _develop                        # Folder with all the necessary files for data cleaning & model creation
 |   └── genres_map.py
 |   └── movies_data_cleaning.py     
@@ -54,7 +54,7 @@ $ pip install -r requirements.txt
 
 3. Data Processing & Model Development
 
-3a. Download "movies_metadata.csv" dataset from the Kaggle site
+3a. Download "movies_metadata.csv" dataset from the [Kaggle site](https://www.kaggle.com/rounakbanik/the-movies-dataset/data)
 
 3b. Run scripts to clean data and create model
 
@@ -72,7 +72,7 @@ $ python application.py
 ```
 ### Unit Tests & Logging
 * Unit tests checked that the output the data cleaning functions and user-entered data from the HTML form returned the proper output - all unit tests can be found in ```test.py```
-* Logging was performed - examples can be in found in the ```"application.log"``` file
+* Logging was performed - examples can be in found in the ```application.log``` file
 
 ### Project Management
 Development of this project was tracked in Pivotal Tracker. Link to this specific project can be found 
