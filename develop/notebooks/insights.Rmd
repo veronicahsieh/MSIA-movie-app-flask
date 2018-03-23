@@ -1,0 +1,48 @@
+---
+title: "Test"
+author: "Veronica Hsieh"
+date: "3/18/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+movie <- read.csv("../movies_clean.csv")
+```
+
+```{r}
+ggplot(data = movie, aes(x=Var1, y=Var2, fill=value)) + 
+  geom_tile()
+```
+
+```{r}
+library(wesanderson)
+```
+
+```{r}
+library(RColorBrewer)
+```
+
+```{r}
+cor(movie[,1:2])
+```
+
+
+```{r}
+library(ggplot2)
+a <- ggplot(data = movie, aes(x=budget, y=revenue)) + geom_point()
+a
+```
+
+```{r}
+movie_cor <- cor()
+```
+
+
+```{r}
+ggplot(data)
+```
+

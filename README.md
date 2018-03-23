@@ -7,6 +7,9 @@ Build a movie prediction model that enable users to enter movie information and 
 
 ### Package Requirements
 
+1. Flask 
+2. SQLAlchemy
+
 ### Components
 
 
