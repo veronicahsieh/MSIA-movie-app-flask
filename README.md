@@ -5,6 +5,11 @@ Web application for analytics value chain class
 ### Project Overview
 The goal of this project is to build a movie prediction model that enable users to enter movie information and see an estimated box office revenue. Due to the nature of the dataset (categorical variables & continuous variables with different scaling), a tree based model was used to generate the revenue predictions.
 
+### Team Members:
+* Product Owner: Varun Gupta
+* QA: Will Song
+* Developer: Veronica Hsieh
+
 ### Package Requirements
 
 * Refer to ```requirements.txt```
@@ -65,6 +70,8 @@ $ cd develop
 $ python movies_data_cleaning.py
 $ python make_model.py
 ```
+**Additional Info:** To learn more about the specific functions for each script, navigate to ```docs/_build/html```
+
 4. Run application
 
 ```
