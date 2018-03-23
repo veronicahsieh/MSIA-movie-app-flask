@@ -29,10 +29,8 @@ remove = ['country', 'random', 'random2']
 def test_conv_to_numeric():
     """Test that data is properly read into a DataFrame."""
 
-    test_data_new = conv_to_numeric(test_data)
-
     # Check that output is the correct data type
-    assert test_data_new['popularity'][0] == 150
+    assert conv_to_numeric(test_data).popularity[1] == 150
 
 
 def test_drop_columns():
@@ -45,10 +43,11 @@ def test_drop_columns():
     assert drop_columns(test_data, remove).shape[1] == 4
 
 
-# def test_build_pred_frame():
+def test_build_pred_frame():
     """Check that Dataframe is properly constructed from user input data."""
 
     # Check that output is a DataFrame
-    #assert isinstance(build_pred_frame('28', 2010, 400, 7, 4, 50000), pd.DataFrame)
+    assert isinstance(build_pred_frame('28', 2010, 400, 7, 4, 50000), pd.DataFrame)
 
-    #assert build_pred_frame('28', 2010, 400, 7, 4, 50000).shape[0] == 1
+    # Check that function returns DataFrame with 25 columns
+    assert build_pred_frame('28', 2010, 400, 7, 4, 50000).shape == (1, 25)
