@@ -3,7 +3,7 @@
 Web application for analytics value chain class
 
 ### Project Overview
-The goal of this project is to build a movie prediction model that enable users to enter movie information and be able to see the estimated box office revenue.
+The goal of this project is to build a movie prediction model that enable users to enter movie information and see an estimated box office revenue. Due to the nature of the dataset (categorical variables & continuous variables with different scaling), a tree based model was used to generate the revenue predictions.
 
 ### Package Requirements
 
@@ -12,30 +12,30 @@ The goal of this project is to build a movie prediction model that enable users 
 ### Directory Structure
 
 ```
-├── _README.md <br />
-├── _develop                        # Folder with all the necessary files for data cleaning & model creation <br />
-|   └── genres_map.py <br />
-|   └── movies_data_cleaning.py <br />    
-|   └── make_model.py <br />               
-|   └── predict.py                  # Script that takes user input to generate movie revenue prediction <br />
-|   └── test.py                     # Script with unit testing for app <br />
-|   └── movie_tree.pkl <br />            
-|   └── notebooks                   # Jupyter notebooks with initial exploratory data analysis and model building <br />
+├── _README.md 
+├── _develop                        # Folder with all the necessary files for data cleaning & model creation
+|   └── genres_map.py 
+|   └── movies_data_cleaning.py
+|   └── make_model.py          
+|   └── predict.py                  # Script that takes user input to generate movie revenue prediction
+|   └── test.py                     # Script with unit testing for app
+|   └── movie_tree.pkl          
+|   └── notebooks                   # Jupyter notebooks with initial exploratory data analysis and model building
 
-├── _requirements.txt               # Required packages to run app <br />
-├── _msiapp <br />
-|   ├── forms.py <br />
-|   └── models.py <br />
-|   └── __init__.py <br />
-|   └── static                      # Images used for web app <br />
-|   └── templates                   # HTML pages <br />
+├── _requirements.txt               # Required packages to run app
+├── _msiapp 
+|   ├── forms.py
+|   └── models.py
+|   └── __init__.py
+|   └── static                      # Images used for web app 
+|   └── templates                   # HTML pages
 
-├── _docs                           # Documentation around data cleaning, model building, and unit-testing scripts <br />
-├── _create_db.py                   # Script to instantiate database <br />
-├── genres_map.csv                  # File used to map user input to genre code for model predictions <br />
-├── _config.py                      # Configuration for AWS and RDS instance <br />
-├── movieapp_presentation.pdf       # Final presentation for demo of web app <br />
-└── application.log                 # Logging from application.py <br />
+├── _docs                           # Documentation around data cleaning, model building, and unit-testing scripts
+├── _create_db.py                   # Script to instantiate database
+├── genres_map.csv                  # File used to map user input to genre code for model predictions
+├── _config.py                      # Configuration for AWS and RDS instance
+├── movieapp_presentation.pdf       # Final presentation for demo of web app 
+└── application.log                 # Logging from application.py
 ```
 
 ### Steps to Launch App
@@ -82,4 +82,4 @@ Development of this project was managed in Pivotal Tracker. Link to this specifi
 
 ### Final Presentation
 Demo of the final web app was accompanied by 
-[this presentation](https://github.com/vhsieh920/MSIA_movie_webapp/blob/web_page/movieapp_presentation.pdf)
+[this presentation](https://github.com/vhsieh920/MSIA_movie_webapp/blob/web_page/movieapp_presentation.pdf).
