@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# movie revenue prediction app documentation build configuration file, created by
-# sphinx-quickstart on Fri Feb 23 09:23:40 2018.
+# movierevenueapp documentation build configuration file, created by
+# sphinx-quickstart on Thu Mar 22 22:52:44 2018.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -17,9 +17,9 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
+sys.path.insert(0, os.path.abspath('../develop'))
 
 
 # -- General configuration ------------------------------------------------
@@ -46,7 +46,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'movie revenue prediction app'
+project = 'movierevenueapp'
 copyright = '2018, Veronica Hsieh'
 author = 'Veronica Hsieh'
 
@@ -112,7 +112,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'movierevenuepredictionappdoc'
+htmlhelp_basename = 'movierevenueappdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -139,7 +139,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'movierevenuepredictionapp.tex', 'movie revenue prediction app Documentation',
+    (master_doc, 'movierevenueapp.tex', 'movierevenueapp Documentation',
      'Veronica Hsieh', 'manual'),
 ]
 
@@ -149,7 +149,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'movierevenuepredictionapp', 'movie revenue prediction app Documentation',
+    (master_doc, 'movierevenueapp', 'movierevenueapp Documentation',
      [author], 1)
 ]
 
@@ -160,8 +160,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'movierevenuepredictionapp', 'movie revenue prediction app Documentation',
-     author, 'movierevenuepredictionapp', 'One line description of project.',
+    (master_doc, 'movierevenueapp', 'movierevenueapp Documentation',
+     author, 'movierevenueapp', 'One line description of project.',
      'Miscellaneous'),
 ]
 

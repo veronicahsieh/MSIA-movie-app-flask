@@ -1,0 +1,164 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>&lt;no title&gt; &#8212; movierevenueapp 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="make_model.html" />
+    <link rel="prev" title="Welcome to movierevenueapp’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-movies_data_cleaning"></span><dl class="function">
+<dt id="movies_data_cleaning.clean_genre">
+<code class="descclassname">movies_data_cleaning.</code><code class="descname">clean_genre</code><span class="sig-paren">(</span><em>frame</em>, <em>orig_col</em>, <em>new_col</em><span class="sig-paren">)</span><a class="headerlink" href="#movies_data_cleaning.clean_genre" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new genre column to the Dataframe that extracts the first genre
+for each movie from raw movie file. Original genre column was a dictionary
+coerced into string.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>frame (DataFrame): movie DataFrame with raw genre
+orig_col (str): name of existing genre column
+new_col (str): name of new genre column</dd>
+<dt>Returns:</dt>
+<dd>Dataframe with new genre column</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="movies_data_cleaning.conv_to_numeric">
+<code class="descclassname">movies_data_cleaning.</code><code class="descname">conv_to_numeric</code><span class="sig-paren">(</span><em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#movies_data_cleaning.conv_to_numeric" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts continuous variables from string to integer.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="movies_data_cleaning.drop_columns">
+<code class="descclassname">movies_data_cleaning.</code><code class="descname">drop_columns</code><span class="sig-paren">(</span><em>frame</em>, <em>col_list</em><span class="sig-paren">)</span><a class="headerlink" href="#movies_data_cleaning.drop_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes unwanted columns from the data frame.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="movies_data_cleaning.get_data">
+<code class="descclassname">movies_data_cleaning.</code><code class="descname">get_data</code><span class="sig-paren">(</span><em>ext</em>, <em>file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#movies_data_cleaning.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the movie data file into a pandas DataFrame.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="movies_data_cleaning.get_release_year">
+<code class="descclassname">movies_data_cleaning.</code><code class="descname">get_release_year</code><span class="sig-paren">(</span><em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#movies_data_cleaning.get_release_year" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new column that extracts the release year for each movie.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="movies_data_cleaning.make_genre_dummy">
+<code class="descclassname">movies_data_cleaning.</code><code class="descname">make_genre_dummy</code><span class="sig-paren">(</span><em>frame</em>, <em>genre_col</em><span class="sig-paren">)</span><a class="headerlink" href="#movies_data_cleaning.make_genre_dummy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates DataFrame with dummy variables for each genre.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="movies_data_cleaning.merge_dummies">
+<code class="descclassname">movies_data_cleaning.</code><code class="descname">merge_dummies</code><span class="sig-paren">(</span><em>frame1</em>, <em>frame2</em><span class="sig-paren">)</span><a class="headerlink" href="#movies_data_cleaning.merge_dummies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merges movies DataFrame with movie genre dummies Dataframe.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="movies_data_cleaning.release_timespan">
+<code class="descclassname">movies_data_cleaning.</code><code class="descname">release_timespan</code><span class="sig-paren">(</span><em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#movies_data_cleaning.release_timespan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates time between current year and release year of movie.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="movies_data_cleaning.remove_empty">
+<code class="descclassname">movies_data_cleaning.</code><code class="descname">remove_empty</code><span class="sig-paren">(</span><em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#movies_data_cleaning.remove_empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes observations with N/As or zeroes.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="movies_data_cleaning.scale_pop">
+<code class="descclassname">movies_data_cleaning.</code><code class="descname">scale_pop</code><span class="sig-paren">(</span><em>frame</em>, <em>orig_col</em>, <em>new_col</em><span class="sig-paren">)</span><a class="headerlink" href="#movies_data_cleaning.scale_pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes log transformation of a numeric column in dataframe.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="movies_data_cleaning.shift_pop">
+<code class="descclassname">movies_data_cleaning.</code><code class="descname">shift_pop</code><span class="sig-paren">(</span><em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#movies_data_cleaning.shift_pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts all zeroes in the popularity column to 1.</p>
+</dd></dl>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to movierevenueapp’s documentation!</a></li>
+      <li>Next: <a href="make_model.html" title="next chapter">&lt;no title&gt;</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Veronica Hsieh.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/movies_data_cleaning.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
