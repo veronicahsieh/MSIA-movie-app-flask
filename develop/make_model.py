@@ -1,4 +1,5 @@
 # loading necessary packages
+import sys
 import csv
 import math
 import numpy as np
@@ -10,8 +11,10 @@ from sklearn.tree import DecisionTreeRegressor
 import random
 from sklearn.metrics import r2_score
 
+from movies_data_cleaning import get_data
 
-def make_model(frame):
+
+def make_model(frame, x_col, y_col):
     """
     Takes the movie DataFrame and splits it into a training/test set.
     Decision tree model is created from training set and evaluated on the test
@@ -25,18 +28,10 @@ def make_model(frame):
     """
     # Creating the training and test set
     train_frame, test_frame = train_test_split(frame, test_size=0.2, random_state=33)
-    x_train = train_frame[['budget', 'runtime', 'vote_average', 'release_timespan',
-                           'popularity_scaled', ' 10402', ' 10749', ' 10751',
-                           ' 10752', ' 10769', ' 10770', ' 12', ' 14', ' 16',
-                           ' 18', ' 27', ' 28', ' 35', ' 36', ' 37', ' 53',
-                           ' 80', ' 878', ' 9648', ' 99']]
-    y_train = train_frame['revenue']
-    x_test = test_frame[['budget', 'runtime', 'vote_average', 'release_timespan',
-                         'popularity_scaled', ' 10402', ' 10749', ' 10751',
-                         ' 10752', ' 10769', ' 10770', ' 12', ' 14', ' 16', ' 18',
-                         ' 27', ' 28', ' 35', ' 36', ' 37', ' 53', ' 80', ' 878',
-                         ' 9648', ' 99']]
-    y_test = test_frame['revenue']
+    x_train = train_frame[x_col]
+    y_train = train_frame[y_col]
+    x_test = test_frame[x_col]
+    y_test = test_frame[y_col]
 
     # Building the model object
     movie_model = DecisionTreeRegressor(max_depth=8, min_samples_leaf=7)
@@ -55,3 +50,22 @@ def create_pickle(path, model):
     pickle_path = open(path, 'wb')
     pickle.dump(model, pickle_path)
     pickle_path.close()
+
+
+if __name__ == '__main__':
+    # Loading in the data
+    data = sys.argv[1]
+    clean_movies = get_data('', "clean_movies.csv")
+    clean_movies = clean_movies.dropna()
+
+    # Create model using dataset
+    x_columns = ['budget', 'runtime', 'vote_average', 'release_timespan',
+                           'popularity_scaled', ' 10402', ' 10749', ' 10751',
+                           ' 10752', ' 10769', ' 10770', ' 12', ' 14', ' 16',
+                           ' 18', ' 27', ' 28', ' 35', ' 36', ' 37', ' 53',
+                           ' 80', ' 878', ' 9648', ' 99']
+    y_columns = ['revenue']
+    movie_model = make_model(clean_movies, x_columns, y_columns)
+
+    # Write the model file to csv
+    create_pickle('movies.pkl', movie_model)

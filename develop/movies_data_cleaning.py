@@ -1,4 +1,5 @@
 # loading necessary packages
+import sys
 import csv
 import numpy as np
 import math
@@ -6,25 +7,17 @@ import pandas as pd
 import random
 import datetime
 
-# Part I: Loading & Processing Data
-
 
 def get_data(ext, file_name):
     """Reads the movie data file into a pandas DataFrame."""
     data = pd.read_csv(ext + file_name)
     return data
 
-# Data Cleaning & Manipulation
-
 
 def drop_columns(frame, col_list):
     """Removes unwanted columns from the data frame."""
     new_frame = frame.drop(col_list, axis=1)
     return new_frame
-
-
-rem_list = ['adult', 'belongs_to_collection', 'homepage', 'original_language', 'overview', 'poster_path',
-            'production_companies', 'production_countries', 'spoken_languages', 'status', 'tagline', 'video']
 
 
 def clean_genre(frame, orig_col, new_col):
@@ -63,6 +56,7 @@ def conv_to_numeric(frame):
 def release_timespan(frame):
     """Calculates time between current year and release year of movie."""
     frame['release_timespan'] = datetime.datetime.now().year - frame['release_year']
+    return frame
 
 
 def shift_pop(frame):
@@ -100,7 +94,33 @@ def merge_dummies(frame1, frame2):
     return movies_data
 
 
-# List of columns to drop for movies train dataset
-rem_list2 = ['index', 'genre1', 'release_year', 'genres', 'id', 'title', 'release_date',
-             'imdb_id', 'original_title', 'popularity', 'vote_count',
-             "': 'Aniplex'", "': 'Carousel Productions'", "': 'Odyssey Media'"]
+if __name__ == '__main__':
+    # Loading in the data
+    data = sys.argv[1]
+    movies = get_data('', data)
+
+    # Data cleaning and transformations
+    rem_list = ['adult', 'belongs_to_collection', 'homepage', 'original_language',
+                'overview', 'poster_path', 'production_companies', 'production_countries',
+                'spoken_languages', 'status', 'tagline', 'video']
+    movies_v1 = drop_columns(movies, rem_list)
+    movies_v1 = clean_genre(movies_v1, orig_col='genres', new_col='genre1')
+    movies_v1 = get_release_year(movies_v1)
+    movies_v1 = conv_to_numeric(movies_v1)
+    movies_v1 = release_timespan(movies_v1)
+    movies_v1 = shift_pop(movies_v1)
+    movies_v1 = scale_pop(movies_v1, 'popularity', 'popularity_scaled')
+    movies_v2 = movies_v1.copy()
+    movies_v2 = remove_empty(movies_v1).reset_index()
+
+    # Create dummy variables and feature variables dataset
+    genres_frame = make_genre_dummy(movies_v2, 'genre1').reset_index()
+
+    rem_list2 = ['level_0', 'index_x', 'index_y', 'genre1', 'release_year', 'genres', 'id', 'title', 'release_date',
+                 'imdb_id', 'original_title', 'popularity', 'vote_count',
+                 "': 'Aniplex'", "': 'Carousel Productions'", "': 'Odyssey Media'"]
+    movies_v3 = merge_dummies(movies_v2, genres_frame)
+    movies_v4 = drop_columns(movies_v3, rem_list2)
+
+    # Write final dataset to csv
+    movies_v4.to_csv("clean_movies.csv", index=False)
