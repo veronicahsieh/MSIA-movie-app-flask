@@ -63,16 +63,16 @@ $ pip install -r requirements.txt
 
 * 3a. Download "movies_metadata.csv" dataset from the [Kaggle site](https://www.kaggle.com/rounakbanik/the-movies-dataset/data)
 
-* 3b. Run scripts to clean data and create model. Note - ```clean_movies.csv``` is the name of the csv output from ```movies_data_cleaning.py```
+* 3b. Run scripts to clean data and create model. **Note:** ```clean_movies.csv``` is the name of the csv file that gets outputted from ```movies_data_cleaning.py```
 
 ```
 $ cd develop
 $ python movies_data_cleaning.py movies_metadata.csv
 $ python make_model.py clean_movies.csv
 ```
-> **Additional Documentation:** To learn more about the specific functions for each script, navigate to ```docs/_build/html```
+**Additional Documentation:** To learn more about the specific functions for each script, navigate to ```docs/_build/html```
 
-4. Run application; note create_db.py is a one-time setup only
+4. Run application. **Note:** create_db.py is a one-time setup only
 
 ```
 $ cd ..
