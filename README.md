@@ -74,6 +74,11 @@ $ python application.py
 ```
 ### Unit Tests & Logging
 * Unit tests checked that the output the data cleaning functions and user-entered data from the HTML form returned the proper output - all unit tests can be found in ```test.py```
+* To run the unit tests:
+```
+$ cd develop
+$ pytest test.py
+```
 * Logging was performed at the application level - see example ```application.log``` 
 
 ### Project Management
