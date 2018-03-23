@@ -1,0 +1,5 @@
+{
+  "test.py::test_get_data": true,
+  "test.py::test_movie_pred": true,
+  "test/clean_movie_test.py": true
+}

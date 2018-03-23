@@ -1,0 +1,6 @@
+User input added to database. User entered: ['Music', '2010', '400', '9', '4', '400000']
+DataFrame successfully created from user input.
+Movie revenue calculated successfully. Estimated revenue is: $272,150,273.22
+User input added to database. User entered: ['TV Movie', '1950', '30', '6', '5', '30']
+DataFrame successfully created from user input.
+Movie revenue calculated successfully. Estimated revenue is: $46,884,375.29

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Welcome to movierevenueapp’s documentation! &#8212; movierevenueapp 1.0.0 documentation</title>
+    <title>&lt;no title&gt; &#8212; movierevenueapp 1.0.0 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -23,7 +23,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="movies_data_cleaning.html" />
+    <link rel="next" title="&lt;no title&gt;" href="test.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="make_model.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -39,19 +40,36 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="welcome-to-movierevenueapp-s-documentation">
-<h1>Welcome to movierevenueapp’s documentation!<a class="headerlink" href="#welcome-to-movierevenueapp-s-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-</div>
-</div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
-</ul>
-</div>
+  <span class="target" id="module-predict"></span><dl class="function">
+<dt id="predict.build_pred_frame">
+<code class="descclassname">predict.</code><code class="descname">build_pred_frame</code><span class="sig-paren">(</span><em>genre_code</em>, <em>year</em>, <em>runtime</em>, <em>popularity</em>, <em>rating</em>, <em>budget</em><span class="sig-paren">)</span><a class="headerlink" href="#predict.build_pred_frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates data frame based on user input on movies homepage.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>genre_code (str): code of the movie genre selected by the user. Code for a movie genre is extracted by a dictionary which maps a movie genre to its corresponding code.
+year (int): release year entered by the user.
+runtime (int): runtime of movie entered by the user.
+popularity (int): popularity of movie entered by the user.
+rating (int): rating of movie entered by the user.
+budget (int): budget of movie entered by the user.</dd>
+<dt>Returns:</dt>
+<dd>Dataframe used to make movie revenue prediction. Serves as input parameter in movie_pred(user_frame) function.</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="predict.movie_pred">
+<code class="descclassname">predict.</code><code class="descname">movie_pred</code><span class="sig-paren">(</span><em>user_frame</em><span class="sig-paren">)</span><a class="headerlink" href="#predict.movie_pred" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates predicted revenue based on movie metadata.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>user_frame: dataframe containing movie attributes.</dd>
+<dt>Returns:</dt>
+<dd>Predicted movie revenue value. Value is displayed on the results
+page of application.</dd>
+</dl>
+</dd></dl>
+
 
 
           </div>
@@ -61,8 +79,9 @@
         <div class="sphinxsidebarwrapper"><div class="relations">
 <h3>Related Topics</h3>
 <ul>
-  <li><a href="#">Documentation overview</a><ul>
-      <li>Next: <a href="movies_data_cleaning.html" title="next chapter">&lt;no title&gt;</a></li>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="make_model.html" title="previous chapter">&lt;no title&gt;</a></li>
+      <li>Next: <a href="test.html" title="next chapter">&lt;no title&gt;</a></li>
   </ul></li>
 </ul>
 </div>
@@ -88,7 +107,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="_sources/index.rst.txt"
+      <a href="_sources/predict.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

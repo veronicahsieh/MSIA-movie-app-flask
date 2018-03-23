@@ -1,17 +1,19 @@
-.. movie revenue prediction app documentation master file, created by
-   sphinx-quickstart on Fri Feb 23 09:23:40 2018.
+.. movierevenueapp documentation master file, created by
+   sphinx-quickstart on Thu Mar 22 22:52:44 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to movie revenue prediction app's documentation!
-========================================================
+Welcome to movierevenueapp's documentation!
+===========================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   tutorial
-   code
+   movies_data_cleaning
+   make_model
+   predict
+   test
 
 Indices and tables
 ==================

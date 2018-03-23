@@ -1,10 +1,12 @@
 import pickle
 import datetime
+import logging
 
 import pandas as pd
 from sklearn.externals import joblib
 
-# function that takes dataframe to predict revenue
+logging.basicConfig(format='%(asctime)s %(message)s')
+logger = logging.getLogger(__name__)
 
 
 def movie_pred(user_frame):

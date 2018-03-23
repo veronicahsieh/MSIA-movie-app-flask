@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
 from flask_sqlalchemy import SQLAlchemy
+import logging
 
 from msiapp import application, db
 from msiapp.models import Movie
@@ -14,6 +15,11 @@ import pickle
 from sklearn.externals import joblib
 
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+logger = logging.getLogger('mylogger')
+logger.setLevel(logging.DEBUG)
+fh = logging.FileHandler('application.log')
+fh.setLevel(logging.DEBUG)
+logger.addHandler(fh)
 
 
 @application.route('/')  # root directory, homepage of the website
@@ -40,6 +46,8 @@ def inputdata():
                             popularity=request.form['popularity'], rating=request.form['rating'], budget=request.form['budget'])
         db.session.add(movie_entry)
         db.session.commit()
+        user_input = [genre, year, runtime, popularity, rating, budget]
+        logger.info('User input added to database. User entered: %s' % str(user_input))
 
         genres_map = {}
         make_genres_map(genres_map, "genres_map.csv")
@@ -47,10 +55,12 @@ def inputdata():
         genres_code = genres_map.get(genre)
 
         sample_frame = build_pred_frame(genres_code, year, runtime, popularity, rating, budget)
+        logger.info('DataFrame successfully created from user input.')
         revenue = movie_pred(sample_frame)
+        logger.info('Movie revenue calculated successfully. Estimated revenue is: %s' % str(revenue))
 
         return render_template("results.html", revenue=revenue, movies=Movie.query.all())
 
 
-if __name__ == "__main__":  # quick check that only run app whenever this app is called directly
+if __name__ == "__main__":
     application.run(host='0.0.0.0', debug=True)  # start this app
