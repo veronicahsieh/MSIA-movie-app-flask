@@ -72,13 +72,24 @@ $ python make_model.py clean_movies.csv
 ```
 **Additional Documentation:** To learn more about the specific functions for each script, navigate to ```docs/_build/html```
 
-4. Run application. **Note:** create_db.py is a one-time setup only
+4. Run application. **Note:** ```create_db.py``` is a one-time setup only
+
+* 4a. Setup the configuration file. Uncomment one of the lines in the ```config.py``` depending on whether a local database or RDS instance is being used. If RDS, update ```[name_of_RDS_endpoint]``` to the name of your specific RDS instance.
+
+```
+# Local database
+#SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/tracks.db'
+
+# RDS database
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://[name_of_RDS_endpoint]'
+```
 
 ```
 $ cd ..
 $ python create_db.py
 $ python application.py
 ```
+
 ### Unit Tests & Logging
 * Unit tests checked that the output the data cleaning functions and user-entered data from the HTML form returned the proper output - all unit tests can be found in ```test.py```
 * To run the unit tests:
